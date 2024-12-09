@@ -1,0 +1,181 @@
+body {
+    background-color: #ffb3da;
+    /* Matches the pink background */
+}
+
+.form-step {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    /* Wider for desktop view */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.step-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-next,
+.btn-previous,
+.btn-skip {
+    margin-top: 20px;
+    width: 150px;
+}
+
+.custom-button {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.custom-button:hover {
+    background-color: #5a6268;
+}
+
+.highlight-button {
+    background-color: #ff00a5;
+    color: #fff !important;
+}
+
+.highlight-button:hover {
+    background-color: #e00091;
+}
+
+.form-check-input {
+    accent-color: #ff00a5;
+}
+
+.checkbox-label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 0;
+}
+
+.arrow-button {
+    background: none;
+    border: none;
+    font-size: 33px;
+    font-weight: 900;
+    color: #ff00a5;
+    padding: 0;
+    margin-top: 8px;
+    cursor: pointer;
+    width: 33px;
+}
+
+.arrow-button:hover {
+    color: #e00091;
+}
+
+section.main-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-buttons {
+    gap: 10px;
+}
+
+.form-check {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 0;
+    align-items: center;
+    font-size: 21px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.step-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.form-label {
+    font-size: 16px !important;
+    font-weight: 500;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+.input-group select {
+    max-width: 80px;
+}
+
+.form-control {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #ff00a5;
+    box-shadow: none;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#step-10 {
+    text-align: center;
+}
+
+#step-10 .step-header {
+    margin-bottom: 20px;
+}
+
+#step-10 p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn.highlight-button {
+    background-color: #ff00a5;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.highlight-button:hover {
+    background-color: #e00091;
+}

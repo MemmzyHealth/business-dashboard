@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Table with Search and Pagination</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="users.css">
+
+</head>
+<body>
+
+
+
+
+    <div class="d-flex" id="wrapper">
+
+     <div class="bg-dark text-white" id="sidebar-wrapper">
+        <a href="index.html" class="sidebar-heading"><img src="images/logo.png" alt=""></a>
+        <div class="list-group list-group-flush">
+                <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white"><i
+                        class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="setup.html" class="list-group-item list-group-item-action bg-dark text-white bold-list"><i
+                        class="fas fa-cog"></i><span> Set up</span></a>
+                <a href="users.html" class="list-group-item list-group-item-action bg-dark text-white bold-list"><i
+                        class="fas fa-users"></i><span> Users</span></a>
+                <a href="accounts.html" class="list-group-item list-group-item-action bg-dark text-white"><i
+                        class="fas fa-user"></i> Account</a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white log-out"><i
+                        class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+     <div class="user-table">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="btn btn-primary" id="menu-toggle"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="#" class="download-link">Download ^</a>
+        </nav>
+    <h2 class="mt-4 mb-4 user-heading">User Table</h2>
+
+    <table id="userTable" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Number</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>user1</td>
+                <td>user1@gmail.com</td>
+                <td>122 road</td>
+                <td>123456789</td>
+                <td><button class="btn btn-sm btn-warning edit-btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i> Edit</button></td>
+            </tr>
+            <tr>
+                <td>user2</td>
+                <td>user1@gmail.com</td>
+                <td>123 road</td>
+                <td>123456789</td>
+                <td><button class="btn btn-sm btn-warning edit-btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i> Edit</button></td>
+            </tr>
+            <tr>
+                <td>user3</td>
+                <td>user1@gmail.com</td>
+                <td>124 road</td>
+                <td>123456789</td>
+                <td><button class="btn btn-sm btn-warning edit-btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i> Edit</button></td>
+            </tr>
+            <tr>
+                <td>user4</td>
+                <td>user1@gmail.com</td>
+                <td>125 road</td>
+                <td>123456789</td>
+                <td><button class="btn btn-sm btn-warning edit-btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i> Edit</button></td>
+            </tr>
+            <tr>
+                <td>user5</td>
+                <td>user1@gmail.com</td>
+                <td>126 road</td>
+                <td>123456789</td>
+                <td><button class="btn btn-sm btn-warning edit-btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i> Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="mb-3">
+                            <label for="editUser" class="form-label">User</label>
+                            <input type="text" class="form-control" id="editUser" name="user">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="editLocation" name="location">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNumber" class="form-label">Number</label>
+                            <input type="text" class="form-control" id="editNumber" name="number">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+<script>
+     $(document).ready(function () {
+            $("#menu-toggle").click(function () {
+                $(this).find("i").toggleClass("rotate-icon");
+            });
+        });
+     $(document).ready(function() {
+        $('.edit-btn').on('click', function() {
+            var row = $(this).closest('tr');
+            var user = row.find('td:eq(0)').text();
+            var email = row.find('td:eq(1)').text();
+            var location = row.find('td:eq(2)').text();
+            var number = row.find('td:eq(3)').text();
+            $('#editUser').val(user);
+            $('#editEmail').val(email);
+            $('#editLocation').val(location);
+            $('#editNumber').val(number);
+        });
+
+        $('#saveChanges').on('click', function() {
+            var formData = $('#editForm').serializeArray();
+            console.log(formData);  
+            
+            $('#editModal').modal('hide');
+        });
+    });
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("wrapper").classList.toggle("toggled");
+        });
+
+    $(document).ready(function() {
+        $('#userTable').DataTable({
+            "paging": true,  
+            "searching": true, 
+            "ordering": true,
+            "info": true, 
+            "lengthChange": false, 
+            "pageLength": 5, 
+        });
+    });
+</script>
+
+</body>
+</html>

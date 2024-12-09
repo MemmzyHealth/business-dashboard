@@ -1,0 +1,13 @@
+
+.user-table {
+	width: 100%;
+	padding: 0 20px;
+}
+
+.user-heading {
+    font-weight: 700;
+}
+
+div#userTable_filter {
+    margin-bottom: 25px;
+}

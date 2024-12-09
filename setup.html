@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Select Dropdowns</title>
+
+    <!-- Bootstrap 5.3 CSS (for layout) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Flatpickr CSS for Datepicker -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="setup.css">
+
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <div class="bg-dark text-white" id="sidebar-wrapper">
+            <a href="index.html" class="sidebar-heading"><img src="images/logo.png" alt=""></a>
+            <div class="list-group list-group-flush">
+                <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white"><i
+                        class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="setup.html" class="list-group-item list-group-item-action bg-dark text-white bold-list"><i
+                        class="fas fa-cog"></i><span> Set up</span></a>
+                <a href="users.html" class="list-group-item list-group-item-action bg-dark text-white bold-list"><i
+                        class="fas fa-users"></i><span> Users</span></a>
+                <a href="accounts.html" class="list-group-item list-group-item-action bg-dark text-white"><i
+                        class="fas fa-user"></i> Account</a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white log-out"><i
+                        class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="btn btn-primary" id="menu-toggle"><i class="fa-solid fa-arrow-left"></i></button>
+                <a href="#" class="download-link">Download ^</a>
+            </nav>
+            <h1 class="setup-heading">Setup</h1>
+            <div class="dropdown_container">
+
+                <div class="row">
+                    <!-- Date Range Picker for Total Balance -->
+                    <div class="col-lg-6 mb-4 date-picker-container">
+                        <label for="balanceDateRange" class="form-label">Select Date Range</label>
+                        <input type="text" id="balanceDateRange" class="form-control" placeholder="Select Date Range"
+                            readonly>
+                    </div>
+
+                    <!-- Dropdown for Balance -->
+                    <div class="col-lg-6 mb-4">
+                        <label for="balanceSelect" class="form-label">Balance Options</label>
+                        <select class="custom-select" id="balanceSelect">
+                            <option selected>Balance Options</option>
+                            <option value="allUsers">All Users</option>
+                            <option value="androidUsers">Android Users</option>
+                            <option value="iphoneUsers">iPhone Users</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Dropdown for Sales -->
+                    <div class="col-lg-6 mb-4">
+                        <label for="salesSelect" class="form-label">Sales Options</label>
+                        <select class="custom-select" id="salesSelect">
+                            <option selected>Sales Options</option>
+                            <option value="allSales">All Sales</option>
+                            <option value="onlineSales">Online Sales</option>
+                            <option value="inStoreSales">In-Store Sales</option>
+                        </select>
+                    </div>
+                    <!-- Dropdown for iOS Downloads -->
+                    <div class="col-lg-6 mb-4">
+                        <label for="iosSelect" class="form-label">iOS Downloads Options</label>
+                        <select class="custom-select" id="iosSelect">
+                            <option selected>iOS Downloads Options</option>
+                            <option value="allIosDownloads">All iOS Downloads</option>
+                            <option value="iphone12Downloads">iPhone 12 Downloads</option>
+                            <option value="iphone13Downloads">iPhone 13 Downloads</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <!-- Dropdown for Android Downloads -->
+                    <div class="col-lg-6 mb-4">
+                        <label for="androidSelect" class="form-label">Android Downloads Options</label>
+                        <select class="custom-select" id="androidSelect">
+                            <option selected>Android Downloads Options</option>
+                            <option value="allAndroidDownloads">All Android Downloads</option>
+                            <option value="samsungDownloads">Samsung Downloads</option>
+                            <option value="oneplusDownloads">OnePlus Downloads</option>
+                        </select>
+                    </div>
+
+                    <!-- Dropdown for Orders -->
+                    <div class="col-lg-6 mb-4">
+                        <label for="ordersSelect" class="form-label">Orders Options</label>
+                        <select class="custom-select" id="ordersSelect">
+                            <option selected>Orders Options</option>
+                            <option value="allOrders">All Orders</option>
+                            <option value="completedOrders">Completed Orders</option>
+                            <option value="pendingOrders">Pending Orders</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Dropdown for Sales -->
+                    <div class="col-lg-6 mb-4">
+                        <label for="salesSelect" class="form-label">Sales Options</label>
+                        <select class="custom-select" id="salesSelect">
+                            <option selected>Sales Options</option>
+                            <option value="allSales">All Sales</option>
+                            <option value="onlineSales">Online Sales</option>
+                            <option value="inStoreSales">In-Store Sales</option>
+                        </select>
+                    </div>
+                    <!-- Dropdown for iOS Downloads -->
+                    <div class="col-lg-6 mb-4">
+                        <label for="iosSelect" class="form-label">iOS Downloads Options</label>
+                        <select class="custom-select" id="iosSelect">
+                            <option selected>iOS Downloads Options</option>
+                            <option value="allIosDownloads">All iOS Downloads</option>
+                            <option value="iphone12Downloads">iPhone 12 Downloads</option>
+                            <option value="iphone13Downloads">iPhone 13 Downloads</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS and Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#menu-toggle").click(function () {
+                $(this).find("i").toggleClass("rotate-icon");
+            });
+        });
+
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("wrapper").classList.toggle("toggled");
+        });
+
+        flatpickr("#balanceDateRange", {
+            mode: "range",
+            dateFormat: "Y-m-d",
+            onChange: function (selectedDates, dateStr, instance) {
+                console.log("Selected dates: ", dateStr);
+            }
+        });
+
+        document.querySelectorAll('.custom-select').forEach(select => {
+            select.addEventListener('change', () => {
+                console.log(`${select.id} selected: ${select.value}`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
